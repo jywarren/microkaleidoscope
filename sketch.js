@@ -1,9 +1,11 @@
-let capture, canvas;
+let capture, canvas, maskCanvas, mask;
 
 function setup() {
   canvas = createCanvas(640, 640);
   capture = createCapture(VIDEO);
   capture.hide();
+  maskCanvas = createGraphics(width, height);
+  mask = setupMask();
 }
 
 function draw() {
@@ -11,7 +13,7 @@ function draw() {
   blendMode(ADD);
   if (capture.loadedmetadata) {
     let c = capture.get(0, 0, width, height);
-    c.mask(mask(0));
+    c.mask(mask);
     image(c, 0, 0);
     
     flip(c);
@@ -42,16 +44,16 @@ function flip(c) {
   image(c, 0, 0);
 }
 
-function mask(i) {
-  let mask = createGraphics(width, height);
-  mask.beginShape();
-  mask.vertex(width / 2, height / 2);
-  mask.vertex(width / 2, 0);
-  mask.vertex(width, 0); // N
-  mask.vertex(width / 2, height / 2);
-  mask.strokeWeight(0.1);
-  mask.endShape();
-  mask.stroke(255);
-  mask.fill(255);
-  return mask;
+function setupMask() {
+  maskCanvas.clear();
+  maskCanvas.beginShape();
+  maskCanvas.vertex(width / 2, height / 2);
+  maskCanvas.vertex(width / 2, 0);
+  maskCanvas.vertex(width, 0); // N
+  maskCanvas.vertex(width / 2, height / 2);
+  maskCanvas.strokeWeight(0.1);
+  maskCanvas.endShape();
+  maskCanvas.stroke(255);
+  maskCanvas.fill(255);
+  return maskCanvas;
 }
