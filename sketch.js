@@ -4,6 +4,8 @@ function setup() {
   canvas = createCanvas(640, 640);
   let constraints = {
     video: {
+      width:640,
+      height:640,
       facingMode: 'environment',
     },
     audio: false
