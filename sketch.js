@@ -2,10 +2,18 @@ let capture, canvas, maskCanvas, mask;
 
 function setup() {
   canvas = createCanvas(640, 640);
-  capture = createCapture(VIDEO);
+  let constraints = {
+    video: {
+      facingMode: 'environment',
+    },
+    audio: false
+  };
+  capture = createCapture(constraints);
   capture.hide();
   maskCanvas = createGraphics(width, height);
   mask = setupMask();
+  canvas.elt.style.width = "100%";
+  canvas.elt.style['margin-top'] = (displayHeight-height)/2;
 }
 
 function draw() {
