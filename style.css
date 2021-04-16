@@ -8,6 +8,7 @@ html, body {
 canvas {
   display: block;
   width: 100%;
+  margin: 0 auto;
 }
 p {
   font-family: courier, monospace;
