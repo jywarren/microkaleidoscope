@@ -13,6 +13,7 @@ function setup() {
   maskCanvas = createGraphics(width, height);
   mask = setupMask();
   canvas.elt.style.width = "100%";
+  canvas.elt.style.height = "auto";
   canvas.elt.style['margin-top'] = (displayHeight-height)/2;
 }
 
