@@ -1,8 +1,22 @@
 html, body {
+  background: #000;
   margin: 0 auto;
   padding: 0;
-  width: 640px;
+  width: 100%;
+  text-align:center;
 }
 canvas {
   display: block;
+  width: 100%;
+}
+p {
+  font-family: courier, monospace;
+  font-size: 11px;
+  color: #aaa;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+a {
+  color: #888;
 }
