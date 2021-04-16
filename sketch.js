@@ -16,7 +16,7 @@ function setup() {
   mask = setupMask();
   canvas.elt.style.width = "100%";
   canvas.elt.style.height = "auto";
-  canvas.elt.style['margin-top'] = (displayHeight-height)/2;
+  document.body.style['padding-top'] = (displayHeight-canvas.height)/4 + "px";
 }
 
 function draw() {
