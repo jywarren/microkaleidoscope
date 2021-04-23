@@ -6,3 +6,5 @@ Demo also at:
 https://jywarren.github.io/microkaleidoscope/
 
 Works on phones too!
+
+Try it with https://github.com/jywarren/micro-joystick
